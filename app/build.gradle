@@ -30,9 +30,10 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.3.0'
 
     //dagger 2 (DI)
-    apt 'com.google.dagger:dagger-compiler:2.2'
-    compile 'com.google.dagger:dagger:2.2'
     provided 'javax.annotation:jsr250-api:1.0'
+    apt 'com.google.guava:guava:19.0' // needed by Dagger 2.4
+    apt 'com.google.dagger:dagger-compiler:2.4'
+    compile 'com.google.dagger:dagger:2.4'
 
     // MVVM framework
     compile 'cz.kinst.jakub:viewmodelbinding:0.9.3'
