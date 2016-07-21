@@ -49,7 +49,8 @@ dependencies {
     compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
 
     // OkHttp
-    compile 'com.squareup.okhttp:okhttp:2.3.0'
+    compile 'com.squareup.okhttp3:okhttp:3.3.1'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.3.1'
 
     // Picasso
     compile 'com.squareup.picasso:picasso:2.5.2'
