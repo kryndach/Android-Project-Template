@@ -37,4 +37,27 @@ dependencies {
 
     // MVVM framework
     compile 'cz.kinst.jakub:viewmodelbinding:0.9.3'
+
+    // RxJava
+    compile 'io.reactivex:rxjava:1.0.16'
+
+    // RxBus
+    compile 'com.hwangjr.rxbus:rxbus:1.0.4'
+
+    // Retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+
+    // OkHttp
+    compile 'com.squareup.okhttp:okhttp:2.3.0'
+
+    // Picasso
+    compile 'com.squareup.picasso:picasso:2.5.2'
+
+    // Database (storIO)
+    compile 'com.pushtorefresh.storio:sqlite:1.9.1'
+    compile 'com.pushtorefresh.storio:content-resolver:1.9.1'
+
+
 }
