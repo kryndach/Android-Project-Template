@@ -24,7 +24,7 @@ public class FragmentModule {
     @Provides
     @PerFragment
     @ActivityContext
-    Context provideAppContext() {
+    Context provideContext() {
         return mFragment.getActivity();
     }
 

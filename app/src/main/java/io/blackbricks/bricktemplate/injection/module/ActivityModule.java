@@ -24,7 +24,7 @@ public class ActivityModule {
     @Provides
     @PerActivity
     @ActivityContext
-    Context provideAppContext() {
+    Context provideContext() {
         return mActivity;
     }
 
