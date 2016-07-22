@@ -7,6 +7,7 @@ import dagger.Component;
 import io.blackbricks.bricktemplate.injection.module.AppModule;
 import io.blackbricks.bricktemplate.injection.qualifier.AppContext;
 import io.blackbricks.bricktemplate.injection.scope.PerApplication;
+import io.blackbricks.bricktemplate.ui.base.BaseViewModelActivity;
 
 /**
  * Created by yegorkryndach on 11/07/16.
