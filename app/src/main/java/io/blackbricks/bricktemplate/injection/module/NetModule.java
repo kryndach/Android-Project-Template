@@ -7,12 +7,12 @@ import dagger.Module;
  */
 @Module
 public class NetModule {
-    private String mBaseUrl;
-    private String mAppKey;
+    private String baseUrl;
+    private String appKey;
 
     public NetModule(String baseUrl, String appKey) {
-        this.mBaseUrl = baseUrl;
-        this.mAppKey = appKey;
+        this.baseUrl = baseUrl;
+        this.appKey = appKey;
     }
 
 

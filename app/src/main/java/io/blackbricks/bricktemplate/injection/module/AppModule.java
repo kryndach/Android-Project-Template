@@ -15,22 +15,22 @@ import io.blackbricks.bricktemplate.injection.scope.PerApplication;
 @Module
 public class AppModule {
 
-    private final Application mApp;
+    private final Application app;
 
     public AppModule(Application app) {
-        mApp = app;
+        this.app = app;
     }
 
     @Provides
     @PerApplication
     @AppContext
     Context provideAppContext() {
-        return mApp;
+        return app;
     }
 
     @Provides
     @PerApplication
     Resources provideResources() {
-        return mApp.getResources();
+        return app.getResources();
     }
 }

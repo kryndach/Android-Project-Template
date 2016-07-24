@@ -15,22 +15,22 @@ import io.blackbricks.bricktemplate.injection.scope.PerActivity;
 @Module
 public class ActivityModule {
 
-    private final AppCompatActivity mActivity;
+    private final AppCompatActivity activity;
 
     public ActivityModule(AppCompatActivity activity) {
-        mActivity = activity;
+        this.activity = activity;
     }
 
     @Provides
     @PerActivity
     @ActivityContext
     Context provideContext() {
-        return mActivity;
+        return activity;
     }
 
     @Provides
     @PerActivity
     FragmentManager provideFragmentManager() {
-        return mActivity.getSupportFragmentManager();
+        return activity.getSupportFragmentManager();
     }
 }

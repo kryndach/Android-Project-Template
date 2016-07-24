@@ -6,6 +6,10 @@ import android.os.PersistableBundle;
 
 import cz.kinst.jakub.viewmodelbinding.ViewModel;
 import cz.kinst.jakub.viewmodelbinding.ViewModelActivity;
+import io.blackbricks.bricktemplate.App;
+import io.blackbricks.bricktemplate.injection.component.ActivityComponent;
+import io.blackbricks.bricktemplate.injection.component.DaggerActivityComponent;
+import io.blackbricks.bricktemplate.injection.module.ActivityModule;
 
 /**
  * Created by yegorkryndach on 22/07/16.
@@ -13,8 +17,22 @@ import cz.kinst.jakub.viewmodelbinding.ViewModelActivity;
 public abstract class BaseViewModelActivity<T extends ViewDataBinding, S extends ViewModel<T>>
         extends ViewModelActivity<T, S> {
 
+    private ActivityComponent activityComponent;
+
+    protected final ActivityComponent activityComponent() {
+        if(activityComponent == null) {
+            activityComponent = DaggerActivityComponent.builder()
+                    .appComponent(App.getAppComponent())
+                    .activityModule(new ActivityModule(this))
+                    .build();
+        }
+
+        return activityComponent;
+    }
+
     @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onDestroy() {
+        super.onDestroy();
+        activityComponent = null;
     }
 }

@@ -15,21 +15,21 @@ import io.blackbricks.bricktemplate.injection.scope.PerFragment;
 @Module
 public class FragmentModule {
 
-    private final Fragment mFragment;
+    private final Fragment fragment;
 
     public FragmentModule(Fragment fragment) {
-        mFragment = fragment;
+        this.fragment = fragment;
     }
 
     @Provides
     @PerFragment
     @ActivityContext
     Context provideContext() {
-        return mFragment.getActivity();
+        return fragment.getActivity();
     }
 
     @Provides
     @PerFragment
-    FragmentManager provideFragmentManager() { return mFragment.getFragmentManager(); }
+    FragmentManager provideFragmentManager() { return fragment.getFragmentManager(); }
 
 }
