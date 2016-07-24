@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import javax.inject.Inject;
 
+import io.blackbricks.bricktemplate.injection.qualifier.AppContext;
 import io.blackbricks.bricktemplate.injection.scope.PerApplication;
 
 /**
@@ -98,7 +99,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + ")";
 
     @Inject
-    public DatabaseHelper(Context context) {
+    public DatabaseHelper(@AppContext Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 

@@ -9,7 +9,6 @@ import cz.kinst.jakub.viewmodelbinding.ViewModelActivity;
 import io.blackbricks.bricktemplate.App;
 import io.blackbricks.bricktemplate.injection.component.ActivityComponent;
 import io.blackbricks.bricktemplate.injection.component.DaggerActivityComponent;
-import io.blackbricks.bricktemplate.injection.module.ActivityModule;
 
 /**
  * Created by yegorkryndach on 22/07/16.
@@ -23,7 +22,6 @@ public abstract class BaseViewModelActivity<T extends ViewDataBinding, S extends
         if(activityComponent == null) {
             activityComponent = DaggerActivityComponent.builder()
                     .appComponent(App.getAppComponent())
-                    .activityModule(new ActivityModule(this))
                     .build();
         }
 
