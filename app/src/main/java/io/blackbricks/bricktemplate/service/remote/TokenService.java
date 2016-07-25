@@ -5,6 +5,7 @@ import java.net.HttpURLConnection;
 import io.blackbricks.bricktemplate.service.remote.request.LoginRequest;
 import io.blackbricks.bricktemplate.service.remote.response.LoginResponse;
 import io.blackbricks.bricktemplate.service.session.UserSessionService;
+import retrofit2.adapter.rxjava.HttpException;
 import rx.Observable;
 import rx.functions.Action1;
 import rx.functions.Func1;
@@ -43,9 +44,9 @@ public class TokenService {
             @Override
             public Observable<? extends T> call(Throwable throwable) {
                 // Here check if the error thrown is a HTTP_UNAUTHORIZED
-                if (throwable instanceof RetrofitError) {
-                    RetrofitError retrofitError = (RetrofitError) throwable;
-                    int statusCode = retrofitError.getResponse().getStatus();
+                if (throwable instanceof HttpException) {
+                    HttpException httpException = (HttpException) throwable;
+                    int statusCode = httpException.response().code();
                     if(statusCode == HttpURLConnection.HTTP_UNAUTHORIZED) {
                         return refreshToken().flatMap(new Func1<LoginResponse, Observable<? extends T>>() {
                             @Override
