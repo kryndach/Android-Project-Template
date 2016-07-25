@@ -1,4 +1,4 @@
-package io.blackbricks.bricktemplate.injection.module;
+package io.blackbricks.bricktemplate.service.local;
 
 import com.pushtorefresh.storio.sqlite.SQLiteTypeMapping;
 import com.pushtorefresh.storio.sqlite.StorIOSQLite;
@@ -11,7 +11,6 @@ import io.blackbricks.bricktemplate.model.Sample;
 import io.blackbricks.bricktemplate.model.SampleStorIOSQLiteDeleteResolver;
 import io.blackbricks.bricktemplate.model.SampleStorIOSQLiteGetResolver;
 import io.blackbricks.bricktemplate.model.SampleStorIOSQLitePutResolver;
-import io.blackbricks.bricktemplate.service.local.DatabaseHelper;
 
 /**
  * Created by yegorkryndach on 21/07/16.

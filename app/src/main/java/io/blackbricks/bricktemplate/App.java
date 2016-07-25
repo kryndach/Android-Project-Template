@@ -7,7 +7,9 @@ import android.preference.PreferenceManager;
 
 import io.blackbricks.bricktemplate.injection.component.AppComponent;
 import io.blackbricks.bricktemplate.injection.component.DaggerAppComponent;
-import io.blackbricks.bricktemplate.injection.module.AppModule;
+import io.blackbricks.bricktemplate.service.local.DatabaseModule;
+import io.blackbricks.bricktemplate.service.remote.NetModule;
+import io.blackbricks.bricktemplate.service.remote.ApiConstants;
 
 /**
  * Created by yegorkryndach on 22/07/16.
@@ -23,6 +25,8 @@ public class App extends Application {
         instance = this;
         appComponent = DaggerAppComponent.builder()
                 .appModule(new AppModule(this))
+                .databaseModule(new DatabaseModule())
+                .netModule(new NetModule(ApiConstants.API_BASE_URL, ApiConstants.APP_KEY))
                 .build();
     }
 

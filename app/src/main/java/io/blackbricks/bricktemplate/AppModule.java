@@ -1,4 +1,4 @@
-package io.blackbricks.bricktemplate.injection.module;
+package io.blackbricks.bricktemplate;
 
 import android.app.Application;
 import android.content.Context;

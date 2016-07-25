@@ -1,4 +1,4 @@
-package io.blackbricks.bricktemplate.service.remote;
+package io.blackbricks.bricktemplate.service.remote.service;
 
 import io.blackbricks.bricktemplate.service.remote.request.CreateUserRequest;
 import io.blackbricks.bricktemplate.service.remote.request.LoginRequest;

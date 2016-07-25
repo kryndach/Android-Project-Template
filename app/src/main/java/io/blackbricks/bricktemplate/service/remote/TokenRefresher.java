@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import io.blackbricks.bricktemplate.injection.scope.PerApplication;
 import io.blackbricks.bricktemplate.service.remote.request.LoginRequest;
 import io.blackbricks.bricktemplate.service.remote.response.LoginResponse;
+import io.blackbricks.bricktemplate.service.remote.service.AuthRemoteService;
 import io.blackbricks.bricktemplate.service.session.UserSessionService;
 import retrofit2.adapter.rxjava.HttpException;
 import rx.Observable;
@@ -17,13 +18,13 @@ import rx.functions.Func1;
  * Created by yegorkryndach on 25/07/16.
  */
 @PerApplication
-public class TokenService {
+public class TokenRefresher {
 
-    AuthRemoteService authRemoteService;
-    UserSessionService sessionService;
+    private AuthRemoteService authRemoteService;
+    private UserSessionService sessionService;
 
     @Inject
-    public TokenService(AuthRemoteService authRemoteService, UserSessionService sessionService) {
+    public TokenRefresher(AuthRemoteService authRemoteService, UserSessionService sessionService) {
         this.authRemoteService = authRemoteService;
         this.sessionService = sessionService;
     }
