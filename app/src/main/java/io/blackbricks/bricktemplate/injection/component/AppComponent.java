@@ -1,6 +1,7 @@
 package io.blackbricks.bricktemplate.injection.component;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 
 import dagger.Component;
@@ -19,4 +20,6 @@ public interface AppComponent {
     Context context();
 
     Resources resources();
+
+    SharedPreferences sharedPreferences();
 }

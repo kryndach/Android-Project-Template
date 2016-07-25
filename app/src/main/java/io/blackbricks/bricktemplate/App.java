@@ -1,7 +1,9 @@
 package io.blackbricks.bricktemplate;
 
 import android.app.Application;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.preference.PreferenceManager;
 
 import io.blackbricks.bricktemplate.injection.component.AppComponent;
 import io.blackbricks.bricktemplate.injection.component.DaggerAppComponent;
@@ -34,5 +36,9 @@ public class App extends Application {
 
     public static Resources getRes() {
         return instance.getResources();
+    }
+
+    public static SharedPreferences getSharedPreferences() {
+        return PreferenceManager.getDefaultSharedPreferences(instance);
     }
 }

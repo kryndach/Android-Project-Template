@@ -2,7 +2,9 @@ package io.blackbricks.bricktemplate.injection.module;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.preference.PreferenceManager;
 
 import dagger.Module;
 import dagger.Provides;
@@ -32,5 +34,11 @@ public class AppModule {
     @PerApplication
     Resources provideResources() {
         return app.getResources();
+    }
+
+    @Provides
+    @PerApplication
+    SharedPreferences provideSharedPreferences() {
+        return PreferenceManager.getDefaultSharedPreferences(app);
     }
 }
