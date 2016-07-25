@@ -15,13 +15,15 @@ public class BaseViewModel<T extends ViewDataBinding> extends ViewModel<T> {
     private ViewModelComponent viewModelComponent;
 
     protected final ViewModelComponent viewModelComponent() {
-        if(viewModelComponent == null) {
-            viewModelComponent = DaggerViewModelComponent.builder()
-                    .appComponent(App.getAppComponent())
-                    .build();
-        }
-
         return viewModelComponent;
+    }
+
+    @Override
+    public void onViewModelCreated() {
+        super.onViewModelCreated();
+        viewModelComponent = DaggerViewModelComponent.builder()
+                .appComponent(App.getAppComponent())
+                .build();
     }
 
     @Override
