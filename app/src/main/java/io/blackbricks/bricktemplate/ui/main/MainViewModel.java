@@ -1,15 +1,14 @@
 package io.blackbricks.bricktemplate.ui.main;
 
-import cz.kinst.jakub.viewmodelbinding.ViewModel;
 import io.blackbricks.bricktemplate.databinding.ActivityMainBinding;
+import io.blackbricks.bricktemplate.ui.base.BaseViewModel;
 
-
-public class MainViewModel extends ViewModel<ActivityMainBinding> {
+public class MainViewModel extends BaseViewModel<ActivityMainBinding> {
 
 
     @Override
     public void onViewModelCreated() {
         super.onViewModelCreated();
-        // Do initial setup
+        viewModelComponent().inject(this);
     }
 }
