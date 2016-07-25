@@ -2,6 +2,9 @@ package io.blackbricks.bricktemplate.service.remote;
 
 import java.net.HttpURLConnection;
 
+import javax.inject.Inject;
+
+import io.blackbricks.bricktemplate.injection.scope.PerApplication;
 import io.blackbricks.bricktemplate.service.remote.request.LoginRequest;
 import io.blackbricks.bricktemplate.service.remote.response.LoginResponse;
 import io.blackbricks.bricktemplate.service.session.UserSessionService;
@@ -13,11 +16,13 @@ import rx.functions.Func1;
 /**
  * Created by yegorkryndach on 25/07/16.
  */
+@PerApplication
 public class TokenService {
 
     AuthRemoteService authRemoteService;
     UserSessionService sessionService;
 
+    @Inject
     public TokenService(AuthRemoteService authRemoteService, UserSessionService sessionService) {
         this.authRemoteService = authRemoteService;
         this.sessionService = sessionService;

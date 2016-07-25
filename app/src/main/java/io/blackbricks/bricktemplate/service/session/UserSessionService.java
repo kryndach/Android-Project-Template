@@ -2,9 +2,14 @@ package io.blackbricks.bricktemplate.service.session;
 
 import android.content.SharedPreferences;
 
+import javax.inject.Inject;
+
+import io.blackbricks.bricktemplate.injection.scope.PerApplication;
+
 /**
  * Created by yegorkryndach on 25/07/16.
  */
+@PerApplication
 public class UserSessionService {
     public static final String USER_NAME = "user_name";
     public static final String USER_ID = "user_id";
@@ -18,6 +23,7 @@ public class UserSessionService {
 
     private SharedPreferences sharedPreferences;
 
+    @Inject
     public UserSessionService(SharedPreferences sharedPreferences) {
         this.sharedPreferences = sharedPreferences;
     }
