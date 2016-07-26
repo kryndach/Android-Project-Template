@@ -9,6 +9,6 @@ public class SampleViewModel extends BaseSessionViewModel<ActivitySampleBinding>
     @Override
     public void onViewModelCreated() {
         super.onViewModelCreated();
-        vmSessionComponent().inject(this);
+        sessionViewModelComponent().inject(this);
     }
 }

@@ -5,7 +5,6 @@ import android.databinding.ViewDataBinding;
 import cz.kinst.jakub.viewmodelbinding.ViewModel;
 import io.blackbricks.bricktemplate.App;
 import io.blackbricks.bricktemplate.injection.component.SessionViewModelComponent;
-import io.blackbricks.bricktemplate.service.session.SessionModule;
 
 /**
  * Created by yegorkryndach on 25/07/16.
@@ -14,7 +13,7 @@ public class BaseSessionViewModel<T extends ViewDataBinding> extends ViewModel<T
 
     private SessionViewModelComponent sessionViewModelComponent;
 
-    protected final SessionViewModelComponent vmSessionComponent() {
+    protected final SessionViewModelComponent sessionViewModelComponent() {
         return sessionViewModelComponent;
     }
 
@@ -22,7 +21,7 @@ public class BaseSessionViewModel<T extends ViewDataBinding> extends ViewModel<T
     public void onViewModelCreated() {
         super.onViewModelCreated();
         sessionViewModelComponent = App.getAppComponent()
-                .sessionComponent(new SessionModule())
+                .sessionComponent()
                 .newSessionViewModelComponent();
     }
 

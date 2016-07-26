@@ -9,6 +9,6 @@ public class MainViewModel extends BaseSessionViewModel<ActivityMainBinding> {
     @Override
     public void onViewModelCreated() {
         super.onViewModelCreated();
-        vmSessionComponent().inject(this);
+        sessionViewModelComponent().inject(this);
     }
 }

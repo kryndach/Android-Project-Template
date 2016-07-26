@@ -35,6 +35,6 @@ public interface AppComponent {
     SampleRemoteService sampleRemoteService();
 
     // subcomponents
-    SessionComponent sessionComponent(SessionModule sessionModule);
+    SessionComponent sessionComponent();
     ViewModelComponent viewModelComponent();
 }
