@@ -10,6 +10,7 @@ import dagger.Module;
 import dagger.Provides;
 import io.blackbricks.bricktemplate.injection.qualifier.AuthToken;
 import io.blackbricks.bricktemplate.injection.scope.PerApplication;
+import io.blackbricks.bricktemplate.injection.scope.PerSession;
 import io.blackbricks.bricktemplate.service.remote.service.AuthRemoteService;
 import io.blackbricks.bricktemplate.service.remote.service.SampleRemoteService;
 import io.blackbricks.bricktemplate.service.session.UserSessionService;
@@ -32,6 +33,7 @@ public class NetModule {
     }
 
     @Provides
+    //@PerSession
     Retrofit provideRetrofit(UserSessionService userSessionService) {
         String authToken = userSessionService.getToken();
         return getRetrofit(authToken);
@@ -58,6 +60,7 @@ public class NetModule {
     }
 
     @Provides
+    //@PerSession
     SampleRemoteService provideSampleRemoteService(Retrofit retrofit){
         return retrofit.create(SampleRemoteService.class);
     }

@@ -4,7 +4,6 @@ import android.databinding.ViewDataBinding;
 
 import cz.kinst.jakub.viewmodelbinding.ViewModel;
 import io.blackbricks.bricktemplate.App;
-import io.blackbricks.bricktemplate.injection.component.DaggerViewModelComponent;
 import io.blackbricks.bricktemplate.injection.component.ViewModelComponent;
 
 /**
@@ -21,9 +20,7 @@ public class BaseViewModel<T extends ViewDataBinding> extends ViewModel<T> {
     @Override
     public void onViewModelCreated() {
         super.onViewModelCreated();
-        viewModelComponent = DaggerViewModelComponent.builder()
-                .appComponent(App.getAppComponent())
-                .build();
+        viewModelComponent = App.getAppComponent().viewModelComponent();
     }
 
     @Override

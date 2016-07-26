@@ -1,14 +1,14 @@
 package io.blackbricks.bricktemplate.ui.sample;
 
 import io.blackbricks.bricktemplate.databinding.ActivitySampleBinding;
-import io.blackbricks.bricktemplate.ui.base.BaseViewModel;
+import io.blackbricks.bricktemplate.ui.base.BaseSessionViewModel;
 
-public class SampleViewModel extends BaseViewModel<ActivitySampleBinding> {
+public class SampleViewModel extends BaseSessionViewModel<ActivitySampleBinding> {
 
 
     @Override
     public void onViewModelCreated() {
         super.onViewModelCreated();
-        viewModelComponent().inject(this);
+        vmSessionComponent().inject(this);
     }
 }

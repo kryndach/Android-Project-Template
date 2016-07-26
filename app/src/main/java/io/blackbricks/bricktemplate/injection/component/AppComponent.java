@@ -12,6 +12,7 @@ import io.blackbricks.bricktemplate.service.remote.NetModule;
 import io.blackbricks.bricktemplate.injection.qualifier.AppContext;
 import io.blackbricks.bricktemplate.injection.scope.PerApplication;
 import io.blackbricks.bricktemplate.service.remote.service.SampleRemoteService;
+import io.blackbricks.bricktemplate.service.session.SessionModule;
 
 /**
  * Created by yegorkryndach on 11/07/16.
@@ -32,4 +33,8 @@ public interface AppComponent {
 
     // Remote data
     SampleRemoteService sampleRemoteService();
+
+    // subcomponents
+    SessionComponent sessionComponent(SessionModule sessionModule);
+    ViewModelComponent viewModelComponent();
 }
