@@ -27,10 +27,10 @@ public interface AppComponent {
 
     SharedPreferences sharedPreferences();
 
-    // Local data
+    // Database
     SampleLocalService sampleLocalService();
 
-    // Remote data
+    // API
     SampleRemoteService sampleRemoteService();
 
     // subcomponents
