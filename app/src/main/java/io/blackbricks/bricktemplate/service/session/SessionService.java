@@ -10,7 +10,7 @@ import io.blackbricks.bricktemplate.injection.scope.PerApplication;
  * Created by yegorkryndach on 25/07/16.
  */
 @PerApplication
-public class UserSessionService {
+public class SessionService {
     public static final String USER_NAME = "user_name";
     public static final String USER_ID = "user_id";
     public static final String PASSWORD = "password";
@@ -24,7 +24,7 @@ public class UserSessionService {
     private SharedPreferences sharedPreferences;
 
     @Inject
-    public UserSessionService(SharedPreferences sharedPreferences) {
+    public SessionService(SharedPreferences sharedPreferences) {
         this.sharedPreferences = sharedPreferences;
     }
 

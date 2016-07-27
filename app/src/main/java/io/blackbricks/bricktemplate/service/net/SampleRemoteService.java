@@ -1,4 +1,4 @@
-package io.blackbricks.bricktemplate.service.net.service;
+package io.blackbricks.bricktemplate.service.net;
 
 /**
  * Created by yegorkryndach on 25/07/16.

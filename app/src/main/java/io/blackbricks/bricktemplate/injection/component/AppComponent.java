@@ -6,12 +6,12 @@ import android.content.res.Resources;
 
 import dagger.Component;
 import io.blackbricks.bricktemplate.AppModule;
-import io.blackbricks.bricktemplate.service.db.DatabaseModule;
-import io.blackbricks.bricktemplate.service.db.service.SampleLocalService;
-import io.blackbricks.bricktemplate.service.net.NetModule;
+import io.blackbricks.bricktemplate.service.db.core.DatabaseModule;
+import io.blackbricks.bricktemplate.service.db.SampleDatabaseService;
+import io.blackbricks.bricktemplate.service.net.core.NetModule;
 import io.blackbricks.bricktemplate.injection.qualifier.AppContext;
 import io.blackbricks.bricktemplate.injection.scope.PerApplication;
-import io.blackbricks.bricktemplate.service.net.service.SampleRemoteService;
+import io.blackbricks.bricktemplate.service.net.SampleRemoteService;
 
 /**
  * Created by yegorkryndach on 11/07/16.
@@ -28,7 +28,7 @@ public interface AppComponent {
     SharedPreferences sharedPreferences();
 
     // Database
-    SampleLocalService sampleLocalService();
+    SampleDatabaseService sampleLocalService();
 
     // API
     SampleRemoteService sampleRemoteService();

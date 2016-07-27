@@ -1,4 +1,4 @@
-package io.blackbricks.bricktemplate.service.net.service;
+package io.blackbricks.bricktemplate.service.net;
 
 import io.blackbricks.bricktemplate.service.net.request.CreateUserRequest;
 import io.blackbricks.bricktemplate.service.net.request.LoginRequest;

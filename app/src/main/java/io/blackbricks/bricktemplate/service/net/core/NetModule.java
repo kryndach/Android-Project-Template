@@ -1,11 +1,11 @@
-package io.blackbricks.bricktemplate.service.net;
+package io.blackbricks.bricktemplate.service.net.core;
 
 import dagger.Module;
 import dagger.Provides;
 import io.blackbricks.bricktemplate.injection.scope.PerApplication;
-import io.blackbricks.bricktemplate.service.net.service.AuthRemoteService;
-import io.blackbricks.bricktemplate.service.net.service.SampleRemoteService;
-import io.blackbricks.bricktemplate.service.session.UserSessionService;
+import io.blackbricks.bricktemplate.service.net.AuthRemoteService;
+import io.blackbricks.bricktemplate.service.net.SampleRemoteService;
+import io.blackbricks.bricktemplate.service.session.SessionService;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
@@ -26,7 +26,7 @@ public class NetModule {
 
     @Provides
     //@PerSession
-    Retrofit provideRetrofit(UserSessionService userSessionService) {
+    Retrofit provideRetrofit(SessionService userSessionService) {
         String authToken = userSessionService.getToken();
         return getRetrofit(authToken);
     }
