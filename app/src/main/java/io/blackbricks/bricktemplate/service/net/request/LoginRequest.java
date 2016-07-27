@@ -1,4 +1,4 @@
-package io.blackbricks.bricktemplate.service.remote.request;
+package io.blackbricks.bricktemplate.service.net.request;
 
 import com.google.gson.annotations.SerializedName;
 

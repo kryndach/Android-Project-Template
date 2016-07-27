@@ -1,4 +1,4 @@
-package io.blackbricks.bricktemplate.service.local;
+package io.blackbricks.bricktemplate.service.db;
 
 import com.pushtorefresh.storio.sqlite.SQLiteTypeMapping;
 import com.pushtorefresh.storio.sqlite.StorIOSQLite;

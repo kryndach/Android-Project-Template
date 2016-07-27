@@ -1,4 +1,4 @@
-package io.blackbricks.bricktemplate.service.local;
+package io.blackbricks.bricktemplate.service.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

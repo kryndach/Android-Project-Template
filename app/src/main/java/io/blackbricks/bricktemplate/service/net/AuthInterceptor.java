@@ -1,4 +1,4 @@
-package io.blackbricks.bricktemplate.service.remote;
+package io.blackbricks.bricktemplate.service.net;
 
 import java.io.IOException;
 

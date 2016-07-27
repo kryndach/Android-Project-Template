@@ -1,18 +1,10 @@
-package io.blackbricks.bricktemplate.service.remote;
-
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
-
-import javax.inject.Named;
+package io.blackbricks.bricktemplate.service.net;
 
 import dagger.Module;
 import dagger.Provides;
-import io.blackbricks.bricktemplate.injection.qualifier.AuthToken;
 import io.blackbricks.bricktemplate.injection.scope.PerApplication;
-import io.blackbricks.bricktemplate.injection.scope.PerSession;
-import io.blackbricks.bricktemplate.service.remote.service.AuthRemoteService;
-import io.blackbricks.bricktemplate.service.remote.service.SampleRemoteService;
+import io.blackbricks.bricktemplate.service.net.service.AuthRemoteService;
+import io.blackbricks.bricktemplate.service.net.service.SampleRemoteService;
 import io.blackbricks.bricktemplate.service.session.UserSessionService;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;

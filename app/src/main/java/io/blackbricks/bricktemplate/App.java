@@ -7,9 +7,9 @@ import android.preference.PreferenceManager;
 
 import io.blackbricks.bricktemplate.injection.component.AppComponent;
 import io.blackbricks.bricktemplate.injection.component.DaggerAppComponent;
-import io.blackbricks.bricktemplate.service.local.DatabaseModule;
-import io.blackbricks.bricktemplate.service.remote.NetModule;
-import io.blackbricks.bricktemplate.service.remote.ApiConstants;
+import io.blackbricks.bricktemplate.service.db.DatabaseModule;
+import io.blackbricks.bricktemplate.service.net.NetModule;
+import io.blackbricks.bricktemplate.service.net.ApiConstants;
 
 /**
  * Created by yegorkryndach on 22/07/16.

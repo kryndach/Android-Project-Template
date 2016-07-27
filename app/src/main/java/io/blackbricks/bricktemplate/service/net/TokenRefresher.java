@@ -1,13 +1,13 @@
-package io.blackbricks.bricktemplate.service.remote;
+package io.blackbricks.bricktemplate.service.net;
 
 import java.net.HttpURLConnection;
 
 import javax.inject.Inject;
 
 import io.blackbricks.bricktemplate.injection.scope.PerApplication;
-import io.blackbricks.bricktemplate.service.remote.request.LoginRequest;
-import io.blackbricks.bricktemplate.service.remote.response.LoginResponse;
-import io.blackbricks.bricktemplate.service.remote.service.AuthRemoteService;
+import io.blackbricks.bricktemplate.service.net.request.LoginRequest;
+import io.blackbricks.bricktemplate.service.net.response.LoginResponse;
+import io.blackbricks.bricktemplate.service.net.service.AuthRemoteService;
 import io.blackbricks.bricktemplate.service.session.UserSessionService;
 import retrofit2.adapter.rxjava.HttpException;
 import rx.Observable;

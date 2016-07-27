@@ -1,8 +1,8 @@
-package io.blackbricks.bricktemplate.service.remote.service;
+package io.blackbricks.bricktemplate.service.net.service;
 
-import io.blackbricks.bricktemplate.service.remote.request.CreateUserRequest;
-import io.blackbricks.bricktemplate.service.remote.request.LoginRequest;
-import io.blackbricks.bricktemplate.service.remote.response.LoginResponse;
+import io.blackbricks.bricktemplate.service.net.request.CreateUserRequest;
+import io.blackbricks.bricktemplate.service.net.request.LoginRequest;
+import io.blackbricks.bricktemplate.service.net.response.LoginResponse;
 import okhttp3.ResponseBody;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
