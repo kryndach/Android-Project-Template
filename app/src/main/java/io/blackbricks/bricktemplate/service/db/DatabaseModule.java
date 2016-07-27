@@ -19,7 +19,7 @@ import io.blackbricks.bricktemplate.model.SampleStorIOSQLitePutResolver;
 public class DatabaseModule {
     @Provides
     @PerApplication
-    StorIOSQLite storIOSQLiteProvider(DatabaseHelper databaseHelper) {
+    StorIOSQLite provideStorIOSQLite(DatabaseOpenHelper databaseHelper) {
         return DefaultStorIOSQLite.builder()
                 .sqliteOpenHelper(databaseHelper)
                 .addTypeMapping(Sample.class, SQLiteTypeMapping.<Sample>builder()

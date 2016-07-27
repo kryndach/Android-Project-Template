@@ -14,13 +14,13 @@ import io.blackbricks.bricktemplate.service.db.table.SampleTable;
  * Created by yegorkryndach on 21/07/16.
  */
 @PerApplication
-public class DatabaseHelper extends SQLiteOpenHelper {
+public class DatabaseOpenHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "todo_manager_db.db";
     private static final int DATABASE_VERSION = 1;
 
     @Inject
-    public DatabaseHelper(@AppContext Context context) {
+    public DatabaseOpenHelper(@AppContext Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 

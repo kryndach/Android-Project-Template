@@ -4,7 +4,6 @@ import com.google.gson.annotations.SerializedName;
 import com.pushtorefresh.storio.sqlite.annotations.StorIOSQLiteColumn;
 import com.pushtorefresh.storio.sqlite.annotations.StorIOSQLiteType;
 
-import io.blackbricks.bricktemplate.service.db.DatabaseHelper;
 import io.blackbricks.bricktemplate.service.db.table.SampleTable;
 
 /**
