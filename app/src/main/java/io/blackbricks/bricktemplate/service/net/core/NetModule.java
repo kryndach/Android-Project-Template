@@ -1,5 +1,7 @@
 package io.blackbricks.bricktemplate.service.net.core;
 
+import android.support.annotation.NonNull;
+
 import dagger.Module;
 import dagger.Provides;
 import io.blackbricks.bricktemplate.injection.qualifier.AuthToken;
@@ -26,6 +28,7 @@ public class NetModule {
     }
 
     @Provides
+    @PerApplication
     OkHttpClient provideOkHttpClient() {
         return new OkHttpClient.Builder()
                 .addNetworkInterceptor(new AppKeyInterceptor(appKey))
@@ -33,6 +36,7 @@ public class NetModule {
     }
 
     @Provides
+    @PerApplication
     @AuthToken
     OkHttpClient provideOkHttpClientAuth(TokenInterceptor tokenInterceptor,
                                          TokenAuthenticator tokenAuthenticator) {
@@ -43,7 +47,7 @@ public class NetModule {
                 .build();
     }
 
-    private Retrofit getRetrofit(OkHttpClient okHttpClient) {
+    private Retrofit getRetrofit(@NonNull OkHttpClient okHttpClient) {
         return new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
@@ -54,14 +58,15 @@ public class NetModule {
 
     @Provides
     @PerApplication
-    AuthRemoteService provideAuthRemoteService() {
-        Retrofit retrofit = getRetrofit(null);
+    AuthRemoteService provideAuthRemoteService(OkHttpClient okHttpClient) {
+        Retrofit retrofit = getRetrofit(okHttpClient);
         return retrofit.create(AuthRemoteService.class);
     }
 
     @Provides
-        //@PerSession
-    SampleRemoteService provideSampleRemoteService(Retrofit retrofit) {
+    @PerApplication
+    SampleRemoteService provideSampleRemoteService(@AuthToken OkHttpClient okHttpClient) {
+        Retrofit retrofit = getRetrofit(okHttpClient);
         return retrofit.create(SampleRemoteService.class);
     }
 

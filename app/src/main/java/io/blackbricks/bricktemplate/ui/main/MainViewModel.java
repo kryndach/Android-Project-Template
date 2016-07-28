@@ -1,14 +1,14 @@
 package io.blackbricks.bricktemplate.ui.main;
 
 import io.blackbricks.bricktemplate.databinding.ActivityMainBinding;
-import io.blackbricks.bricktemplate.ui.base.BaseSessionViewModel;
+import io.blackbricks.bricktemplate.ui.base.BaseViewModel;
 
-public class MainViewModel extends BaseSessionViewModel<ActivityMainBinding> {
+public class MainViewModel extends BaseViewModel<ActivityMainBinding> {
 
 
     @Override
     public void onViewModelCreated() {
         super.onViewModelCreated();
-        sessionViewModelComponent().inject(this);
+        viewModelComponent().inject(this);
     }
 }

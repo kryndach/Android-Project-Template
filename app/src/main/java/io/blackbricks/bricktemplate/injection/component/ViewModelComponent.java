@@ -12,5 +12,6 @@ import io.blackbricks.bricktemplate.ui.sample.SampleViewModel;
 @PerViewModel
 @Subcomponent
 public interface ViewModelComponent {
-
+    void inject(MainViewModel mainViewModel);
+    void inject(SampleViewModel sampleViewModel);
 }
