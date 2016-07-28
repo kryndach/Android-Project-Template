@@ -2,6 +2,7 @@ package io.blackbricks.bricktemplate.service.net.core;
 
 import dagger.Module;
 import dagger.Provides;
+import io.blackbricks.bricktemplate.injection.qualifier.AuthToken;
 import io.blackbricks.bricktemplate.injection.scope.PerApplication;
 import io.blackbricks.bricktemplate.service.net.AuthRemoteService;
 import io.blackbricks.bricktemplate.service.net.SampleRemoteService;
@@ -25,24 +26,24 @@ public class NetModule {
     }
 
     @Provides
-    //@PerSession
-    Retrofit provideRetrofit(SessionService userSessionService) {
-        String authToken = userSessionService.getToken();
-        return getRetrofit(authToken);
+    OkHttpClient provideOkHttpClient() {
+        return new OkHttpClient.Builder()
+                .addNetworkInterceptor(new AppKeyInterceptor(appKey))
+                .build();
     }
 
     @Provides
-    TokenInterceptor provideAuthInterseptor(SessionService userSessionService) {
-        String authToken = userSessionService.getToken();
-        return new TokenInterceptor(appKey, authToken);
+    @AuthToken
+    OkHttpClient provideOkHttpClientAuth(TokenInterceptor tokenInterceptor,
+                                         TokenAuthenticator tokenAuthenticator) {
+        return new OkHttpClient.Builder()
+                .addNetworkInterceptor(new AppKeyInterceptor(appKey))
+                .addNetworkInterceptor(tokenInterceptor)
+                .authenticator(tokenAuthenticator)
+                .build();
     }
 
-    private Retrofit getRetrofit(String authToken) {
-        OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                .authenticator()
-                .addNetworkInterceptor(new TokenInterceptor(appKey, authToken))
-                .build();
-
+    private Retrofit getRetrofit(OkHttpClient okHttpClient) {
         return new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
@@ -53,14 +54,14 @@ public class NetModule {
 
     @Provides
     @PerApplication
-    AuthRemoteService provideAuthRemoteService(){
+    AuthRemoteService provideAuthRemoteService() {
         Retrofit retrofit = getRetrofit(null);
         return retrofit.create(AuthRemoteService.class);
     }
 
     @Provides
-    //@PerSession
-    SampleRemoteService provideSampleRemoteService(Retrofit retrofit){
+        //@PerSession
+    SampleRemoteService provideSampleRemoteService(Retrofit retrofit) {
         return retrofit.create(SampleRemoteService.class);
     }
 
