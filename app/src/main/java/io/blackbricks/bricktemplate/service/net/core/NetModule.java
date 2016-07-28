@@ -31,9 +31,16 @@ public class NetModule {
         return getRetrofit(authToken);
     }
 
+    @Provides
+    TokenInterceptor provideAuthInterseptor(SessionService userSessionService) {
+        String authToken = userSessionService.getToken();
+        return new TokenInterceptor(appKey, authToken);
+    }
+
     private Retrofit getRetrofit(String authToken) {
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                .addNetworkInterceptor(new AuthInterceptor(appKey, authToken))
+                .authenticator()
+                .addNetworkInterceptor(new TokenInterceptor(appKey, authToken))
                 .build();
 
         return new Retrofit.Builder()

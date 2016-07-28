@@ -9,14 +9,12 @@ import okhttp3.Response;
 /**
  * Created by yegorkryndach on 25/07/16.
  */
-public class AuthInterceptor implements Interceptor {
+public class AppKeyInterceptor implements Interceptor {
 
     private String mAppKey;
-    private String mAuthToken;
 
-    public AuthInterceptor(String mAppKey, String mAuthToken) {
+    public AppKeyInterceptor(String mAppKey) {
         this.mAppKey = mAppKey;
-        this.mAuthToken = mAuthToken;
     }
 
     @Override
@@ -26,10 +24,6 @@ public class AuthInterceptor implements Interceptor {
         Request.Builder requestBuilder = original.newBuilder()
                 .header(ApiConstants.APP_KEY_HEADER, mAppKey)
                 .method(original.method(), original.body());
-
-        if (mAuthToken != null) {
-            requestBuilder.header(ApiConstants.SESSION_KEY_HEADER, mAuthToken);
-        }
 
         Request request = requestBuilder.build();
         return chain.proceed(request);

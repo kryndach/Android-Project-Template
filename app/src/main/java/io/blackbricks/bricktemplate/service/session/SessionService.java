@@ -60,7 +60,7 @@ public class SessionService {
     }
 
     public String getToken() {
-        return sharedPreferences.getString(TOKEN, "");
+        return sharedPreferences.getString(TOKEN, null);
     }
 
     public void setToken(String token) {

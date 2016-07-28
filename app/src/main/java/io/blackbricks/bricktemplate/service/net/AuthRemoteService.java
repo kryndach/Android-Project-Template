@@ -4,6 +4,7 @@ import io.blackbricks.bricktemplate.service.net.request.CreateUserRequest;
 import io.blackbricks.bricktemplate.service.net.request.LoginRequest;
 import io.blackbricks.bricktemplate.service.net.response.LoginResponse;
 import okhttp3.ResponseBody;
+import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
@@ -22,6 +23,11 @@ public interface AuthRemoteService {
 
     @POST("api/v1/login")
     Observable<LoginResponse> login(
+            @Body LoginRequest loginRequest
+    );
+
+    @POST("api/v1/login")
+    Call<LoginResponse> loginCall(
             @Body LoginRequest loginRequest
     );
 
