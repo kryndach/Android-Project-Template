@@ -27,7 +27,10 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
+    compile 'com.android.support:recyclerview-v7:23.3.0'
     compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support:design:23.3.0'
+    compile 'com.android.support:percent:23.3.0'
 
     //dagger 2 (DI)
     provided 'javax.annotation:jsr250-api:1.0'
