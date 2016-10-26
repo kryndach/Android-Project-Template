@@ -16,7 +16,7 @@ import io.blackbricks.bricktemplate.service.db.table.SampleTable;
 @PerApplication
 public class DatabaseOpenHelper extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "sample_db.db";
+    private static final String DATABASE_NAME = "sample.db";
     private static final int DATABASE_VERSION = 1;
 
     @Inject
@@ -46,11 +46,6 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
     }
 
     private void recreateDatabase(SQLiteDatabase db) {
-        // TODO remove this hard reset DB in future
-        db.execSQL("PRAGMA writable_schema = 1;" +
-                "delete from sqlite_master where type in ('table', 'index', 'trigger')" +
-                "PRAGMA writable_schema = 0;");
-
         // Drop tables
         db.execSQL("DROP TABLE IF EXISTS " + SampleTable.TABLE);
 
