@@ -16,7 +16,7 @@ import io.blackbricks.bricktemplate.service.db.table.SampleTable;
 @PerApplication
 public class DatabaseOpenHelper extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "todo_manager_db.db";
+    private static final String DATABASE_NAME = "sample_db.db";
     private static final int DATABASE_VERSION = 1;
 
     @Inject
