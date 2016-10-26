@@ -34,4 +34,13 @@ public class SampleTable {
                 + COLUMN_TITLE + " TEXT NOT NULL "
                 + ");";
     }
+
+    @NonNull
+    public static Query withId(int id) {
+        return Query.builder()
+                .table(TABLE)
+                .where(COLUMN_ID + " = ?")
+                .whereArgs(id)
+                .build();
+    }
 }
