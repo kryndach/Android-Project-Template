@@ -19,7 +19,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.main.MainActivity" />
-        <activity android:name=".ui.sample.SampleActivity" />
     </application>
 
 </manifest>
