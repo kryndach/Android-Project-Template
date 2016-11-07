@@ -8,6 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.Launcher">
+        <item name="android:windowBackground">@drawable/launch_screen</item>
+    </style>
+
 
     <style name="Theme.Transparent" parent="AppTheme">
         <item name="android:windowNoTitle">true</item>

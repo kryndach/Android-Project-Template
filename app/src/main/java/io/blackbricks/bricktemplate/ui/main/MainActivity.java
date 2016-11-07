@@ -20,6 +20,7 @@ public class MainActivity extends ViewModelActivity<ActivityMainBinding, MainVie
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         SampleFragment sampleFragment = SampleFragment.newInstance();
 
