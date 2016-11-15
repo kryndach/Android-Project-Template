@@ -41,6 +41,9 @@ dependencies {
     // MVVM framework
     compile 'cz.kinst.jakub:viewmodelbinding:0.9.3'
 
+    // Stateful layout
+    compile 'cz.kinst.jakub:stateful-layout:1.1.5'
+
     // Rx
     compile 'io.reactivex:rxjava:1.1.6'
     compile 'io.reactivex:rxandroid:1.2.1'
