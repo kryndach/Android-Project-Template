@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.preference.PreferenceManager;
 
+import com.orhanobut.hawk.Hawk;
+
 import io.blackbricks.bricktemplate.injection.component.AppComponent;
 import io.blackbricks.bricktemplate.injection.component.DaggerAppComponent;
 import io.blackbricks.bricktemplate.service.db.core.DatabaseModule;
@@ -28,6 +30,8 @@ public class App extends Application {
                 .databaseModule(new DatabaseModule())
                 .netModule(new NetModule(ApiConstants.API_BASE_URL, ApiConstants.APP_KEY))
                 .build();
+
+        Hawk.init(this).build();
     }
 
     public static App getInstance() {
