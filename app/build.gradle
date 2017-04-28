@@ -39,7 +39,7 @@ dependencies {
     compile 'com.google.dagger:dagger:2.4'
 
     // MVVM framework
-    compile 'cz.kinst.jakub:viewmodelbinding:0.9.3'
+    compile 'cz.kinst.jakub:viewmodelbinding:2.0.0'
 
     // Stateful layout
     compile 'cz.kinst.jakub:stateful-layout:1.1.5'
