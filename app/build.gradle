@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.neenbedankt.android-apt'
 
 android {
     compileSdkVersion 26
@@ -34,8 +33,8 @@ dependencies {
 
     //dagger 2 (DI)
     provided 'javax.annotation:jsr250-api:1.0'
-    apt 'com.google.guava:guava:19.0' // needed by Dagger 2.4
-    apt 'com.google.dagger:dagger-compiler:2.4'
+    annotationProcessor 'com.google.guava:guava:19.0' // needed by Dagger 2.4
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.4'
     compile 'com.google.dagger:dagger:2.4'
 
     // MVVM framework
@@ -65,13 +64,13 @@ dependencies {
     compile 'com.pushtorefresh.storio:sqlite:1.10.0'
     compile 'com.pushtorefresh.storio:content-resolver:1.10.0'
     compile 'com.pushtorefresh.storio:sqlite-annotations:1.10.0'
-    apt 'com.pushtorefresh.storio:sqlite-annotations-processor:1.10.0'
+    annotationProcessor 'com.pushtorefresh.storio:sqlite-annotations-processor:1.10.0'
 
     // Key-value storage
     compile 'com.orhanobut:hawk:2.0.1'
 
     // annotate adaptor for RecyclerView
-    apt 'com.hannesdorfmann.annotatedadapter:processor:1.1.1'
+    annotationProcessor 'com.hannesdorfmann.annotatedadapter:processor:1.1.1'
     compile 'com.hannesdorfmann.annotatedadapter:annotation:1.1.1'
     compile 'com.hannesdorfmann.annotatedadapter:support-recyclerview:1.1.1'
 
