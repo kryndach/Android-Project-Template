@@ -1,9 +1,8 @@
 package io.blackbricks.bricktemplate.ui.sample;
 
-import io.blackbricks.bricktemplate.databinding.FragmentSampleBinding;
 import io.blackbricks.bricktemplate.ui.base.BaseViewModel;
 
-public class SampleViewModel extends BaseViewModel<FragmentSampleBinding> {
+public class SampleViewModel extends BaseViewModel {
 
 
     @Override
